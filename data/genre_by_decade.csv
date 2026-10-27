@@ -1,106 +1,70 @@
-decade,publisher,count
-1940,Horwitz,97
-1940,Frank Johnson,53
-1940,Currawong,40
-1940,Collins,35
-1940,Angus and Robertson,31
-1940,Hutchinson and Company,14
-1940,Harrap,12
-1940,Herbert Jenkins,12
-1940,Australian Consolidated Press,11
-1940,Invincible Press,11
-1940,Georgian House,10
-1940,New Order Publications,7
-1940,Dymocks,6
-1940,National Press,6
-1940,C. H. Pitman,5
-1950,Horwitz,453
-1950,Cleveland,381
-1950,Action Comics,179
-1950,Collins,82
-1950,Angus and Robertson,68
-1950,Robert Hale,50
-1950,Hutchinson and Company,47
-1950,Webster Publications,42
-1950,Heinemann Holdings Limited,28
-1950,Calvert Publisher,22
-1950,Hodder and Stoughton,22
-1950,Invincible Press,19
-1950,Currawong,18
-1950,Cassell,16
-1950,Dymocks,16
-1960,Cleveland,987
-1960,Horwitz,658
-1960,Robert Hale,93
-1960,Collins,82
-1960,Calvert Publisher,66
-1960,Mills and Boon,61
-1960,Thomas Tilling,61
-1960,Angus and Robertson,48
-1960,Times Mirror Company,44
-1960,Hodder and Stoughton,41
-1960,Hutchinson and Company,37
-1960,Cassell,27
-1960,Bantam,25
-1960,Rigby,22
-1960,Publishing Associates,20
-1970,Horwitz,523
-1970,Cleveland,264
-1970,Torstar,157
-1970,Robert Hale,91
-1970,Times Mirror Company,72
-1970,Collins,60
-1970,Angus and Robertson,58
-1970,Macmillan,57
-1970,Thomson Organisation,39
-1970,Wennerberg,30
-1970,Hutchinson and Company,26
-1970,Thomas Tilling,26
-1970,Hodder and Stoughton,17
-1970,"Cape, Chatto and Windus",16
-1970,Doubleday,15
-1980,Torstar,294
-1980,Horwitz,222
-1980,Pearson,145
-1980,Cleveland,102
-1980,News Corporation,88
-1980,Robert Hale,75
-1980,Collins,44
-1980,University of Queensland Press,44
-1980,Macmillan,36
-1980,Reed Elsevier,34
-1980,Bertelsmann,29
-1980,Joint,28
-1980,Allen and Unwin,23
-1980,Hodder and Stoughton,22
-1980,Panmacmillan,20
-1990,Torstar,371
-1990,Pearson,308
-1990,Panmacmillan,260
-1990,News Corporation,235
-1990,Reed Elsevier,141
-1990,Random House,132
-1990,Bertelsmann,127
-1990,Hodder Headline,121
-1990,Allen and Unwin,111
-1990,University of Queensland Press,94
-1990,Cleveland,72
-1990,Scholastic,71
-1990,Fremantle Press,39
-1990,Horwitz,39
-1990,Holtzbrinck,36
-2000,Torstar,381
-2000,News Corporation,354
-2000,Pearson,289
-2000,Holtzbrinck,281
-2000,Bertelsmann,266
-2000,Allen and Unwin,248
-2000,Hachette Livre,120
-2000,Zeus Publishing,93
-2000,University of Queensland Press,86
-2000,Hodder Headline,78
-2000,Lothian,77
-2000,Text Publishing,62
-2000,Fremantle Press,56
-2000,Simon and Schuster,56
-2000,Sid Harta Publishers,52
+decade,genre,count
+1940,crime/detective,72
+1940,historical fiction,36
+1940,humour/satire,10
+1940,other,43
+1940,romance,31
+1940,science fiction,2
+1940,war literature,11
+1940,western,133
+1940,young adult,7
+1950,crime/detective,494
+1950,fantasy,2
+1950,historical fiction,78
+1950,humour/satire,8
+1950,other,50
+1950,romance,141
+1950,science fiction,6
+1950,war literature,92
+1950,western,459
+1950,young adult,32
+1960,crime/detective,301
+1960,fantasy,1
+1960,historical fiction,78
+1960,humour/satire,59
+1960,other,94
+1960,romance,314
+1960,science fiction,17
+1960,war literature,317
+1960,western,894
+1960,young adult,32
+1970,crime/detective,132
+1970,fantasy,2
+1970,historical fiction,70
+1970,humour/satire,33
+1970,other,93
+1970,romance,235
+1970,science fiction,28
+1970,war literature,118
+1970,western,393
+1970,young adult,68
+1980,crime/detective,184
+1980,fantasy,7
+1980,historical fiction,115
+1980,humour/satire,83
+1980,other,52
+1980,romance,329
+1980,science fiction,68
+1980,war literature,40
+1980,western,248
+1980,young adult,205
+1990,crime/detective,316
+1990,fantasy,72
+1990,historical fiction,285
+1990,humour/satire,159
+1990,other,147
+1990,romance,439
+1990,science fiction,109
+1990,war literature,34
+1990,western,131
+1990,young adult,712
+2000,crime/detective,325
+2000,fantasy,256
+2000,historical fiction,358
+2000,humour/satire,148
+2000,other,312
+2000,romance,509
+2000,science fiction,137
+2000,war literature,16
+2000,western,21
+2000,young adult,726

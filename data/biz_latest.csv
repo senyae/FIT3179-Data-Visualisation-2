@@ -1,43 +1,9 @@
-decade,nation,count
-1940,American publisher,27
-1940,Australian publisher,332
-1940,British publisher,141
-1940,Multinational,7
-1940,Other/unknown,7
-1940,Self-published,15
-1950,American publisher,93
-1950,Australian publisher,1260
-1950,British publisher,459
-1950,Multinational,18
-1950,Other/unknown,27
-1950,Self-published,11
-1960,American publisher,155
-1960,Australian publisher,1850
-1960,British publisher,599
-1960,Multinational,61
-1960,Other/unknown,47
-1960,Self-published,6
-1970,American publisher,136
-1970,Australian publisher,1033
-1970,British publisher,415
-1970,Multinational,233
-1970,Other/unknown,74
-1970,Self-published,24
-1980,American publisher,95
-1980,Australian publisher,765
-1980,British publisher,357
-1980,Multinational,648
-1980,Other/unknown,135
-1980,Self-published,66
-1990,American publisher,78
-1990,Australian publisher,1118
-1990,British publisher,153
-1990,Multinational,1802
-1990,Other/unknown,160
-1990,Self-published,243
-2000,American publisher,139
-2000,Australian publisher,1581
-2000,British publisher,118
-2000,Multinational,1916
-2000,Other/unknown,109
-2000,Self-published,172
+state,state_abbr,year,businesses,population,per_100k,tile_row,tile_col
+New South Wales,NSW,2025,328,8594000,3.82,1,2
+Victoria,VIC,2025,270,7074000,3.82,2,1
+Queensland,QLD,2025,130,5670000,2.29,0,2
+South Australia,SA,2025,49,1902000,2.58,1,1
+Western Australia,WA,2025,67,3044000,2.2,1,0
+Tasmania,TAS,2025,21,576000,3.65,3,1
+Northern Territory,NT,2025,0,264000,0.0,0,1
+Australian Capital Territory,ACT,2025,9,485000,1.86,2,2
