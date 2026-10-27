@@ -1,0 +1,9 @@
+state,state_abbr,year,businesses,population,per_100k,tile_row,tile_col
+New South Wales,NSW,2025,328,8594000,3.82,1,2
+Victoria,VIC,2025,270,7074000,3.82,2,1
+Queensland,QLD,2025,130,5670000,2.29,0,2
+South Australia,SA,2025,49,1902000,2.58,1,1
+Western Australia,WA,2025,67,3044000,2.2,1,0
+Tasmania,TAS,2025,21,576000,3.65,3,1
+Northern Territory,NT,2025,0,264000,0.0,0,1
+Australian Capital Territory,ACT,2025,9,485000,1.86,2,2

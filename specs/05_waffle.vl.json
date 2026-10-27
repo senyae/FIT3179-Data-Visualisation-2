@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Most Australian book publishers have no employees",
+        "subtitle": "884 book publishing businesses, June 2025. Each square = 1% of businesses."
+    },
+    "width":300,
+    "height": 300,
+    "data": {"sequence": {"start": 0, "stop": 100, "as": "i"}},
+    "transform": [
+        {"calculate":"datum.i % 10", "as":"col"},
+        {"calculate": "floor(datum.i / 10)", "as": "row"},
+        {"calculate": "datum.i < 69 ? 'No employees (69%)' : datum.i < 96 ? '1-19 employees (27%)' : '20+ employees (4%)'", "as": "size"}
+    ],
+    "mark" : {"type": "square", "size":600, "opacity": 1},
+    "encoding": {
+        "x": {"field": "col", "type": "ordinal", "axis":null},
+        "y": {"field": "row", "type":"ordinal","axis":null},
+        "color": {
+            "field": "size", "type": "nominal", "title":null,
+            "scale": {"domain": ["No employees (69%)", "1-19 employees (27%)", "20+ employees (4%)"],
+                      "range": ["#b45309", "#fdba74", "#57534e"]},
+            "legend": {"orient": "right", "labelFontSize":12, "labelLimit":0}
+        },
+        "tooltip": [{"field":"size", "title": "Business size"}]
+    }
+}

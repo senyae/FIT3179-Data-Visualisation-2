@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Each genre's share of the decade's novels",
+    "subtitle": "Novels with a recorded genre. 1940s = 1945–49 only; 2000s = 2000–09."
+  },
+  "width": "container",
+  "height": 320,
+  "data": {"url": "data/genre_by_decade.csv", "format": {"parse": {"decade": "number", "count": "number"}}},
+  "transform": [
+    {"joinaggregate": [{"op": "sum", "field": "count", "as": "decade_total"}], "groupby": ["decade"]},
+    {"calculate": "datum.count / datum.decade_total", "as": "share"},
+    {"calculate": "datum.decade + 's'", "as": "decade_label"}
+  ],
+  "encoding": {
+    "x": {"field": "decade_label", "type": "ordinal", "title": null, "axis": {"labelAngle": 0, "orient": "top"}},
+    "y": {
+      "field": "genre", "type": "nominal", "title": null,
+      "sort": ["western","crime/detective","romance","war literature","humour/satire","historical fiction","young adult","science fiction","fantasy","other"]
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "rect", "stroke": "#fff", "strokeWidth": 1.5},
+      "encoding": {
+        "color": {
+          "field": "share", "type": "quantitative", "title": "Share",
+          "scale": {"scheme": "oranges", "domain": [0, 0.45]},
+          "legend": {"format": ".0%", "orient": "bottom", "gradientLength": 200}
+        },
+        "tooltip": [
+          {"field": "genre", "title": "Genre"},
+          {"field": "decade_label", "title": "Decade"},
+          {"field": "count", "title": "Novels"},
+          {"field": "share", "title": "Share of decade", "format": ".1%"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "fontSize": 11},
+      "encoding": {
+        "text": {"field": "share", "type": "quantitative", "format": ".0%"},
+        "color": {"condition": {"test": "datum.share > 0.25", "value": "white"}, "value": "#333"}
+      }
+    }
+  ]
+}

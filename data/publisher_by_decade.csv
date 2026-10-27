@@ -1,0 +1,131 @@
+year,genre,count
+1945,crime/detective,72
+1950,crime/detective,111
+1955,crime/detective,383
+1960,crime/detective,154
+1965,crime/detective,147
+1970,crime/detective,58
+1975,crime/detective,74
+1980,crime/detective,76
+1985,crime/detective,108
+1990,crime/detective,140
+1995,crime/detective,176
+2000,crime/detective,155
+2005,crime/detective,170
+1945,fantasy,0
+1950,fantasy,1
+1955,fantasy,1
+1960,fantasy,1
+1965,fantasy,0
+1970,fantasy,0
+1975,fantasy,2
+1980,fantasy,5
+1985,fantasy,2
+1990,fantasy,13
+1995,fantasy,59
+2000,fantasy,128
+2005,fantasy,128
+1945,historical fiction,36
+1950,historical fiction,38
+1955,historical fiction,40
+1960,historical fiction,37
+1965,historical fiction,41
+1970,historical fiction,26
+1975,historical fiction,44
+1980,historical fiction,50
+1985,historical fiction,65
+1990,historical fiction,103
+1995,historical fiction,182
+2000,historical fiction,193
+2005,historical fiction,165
+1945,humour/satire,10
+1950,humour/satire,1
+1955,humour/satire,7
+1960,humour/satire,32
+1965,humour/satire,27
+1970,humour/satire,18
+1975,humour/satire,15
+1980,humour/satire,35
+1985,humour/satire,48
+1990,humour/satire,80
+1995,humour/satire,79
+2000,humour/satire,87
+2005,humour/satire,61
+1945,other,43
+1950,other,28
+1955,other,22
+1960,other,49
+1965,other,45
+1970,other,62
+1975,other,31
+1980,other,27
+1985,other,25
+1990,other,48
+1995,other,99
+2000,other,155
+2005,other,157
+1945,romance,31
+1950,romance,60
+1955,romance,81
+1960,romance,178
+1965,romance,136
+1970,romance,113
+1975,romance,122
+1980,romance,159
+1985,romance,170
+1990,romance,193
+1995,romance,246
+2000,romance,373
+2005,romance,136
+1945,science fiction,2
+1950,science fiction,3
+1955,science fiction,3
+1960,science fiction,8
+1965,science fiction,9
+1970,science fiction,9
+1975,science fiction,19
+1980,science fiction,41
+1985,science fiction,27
+1990,science fiction,37
+1995,science fiction,72
+2000,science fiction,73
+2005,science fiction,64
+1945,war literature,11
+1950,war literature,15
+1955,war literature,77
+1960,war literature,160
+1965,war literature,157
+1970,war literature,91
+1975,war literature,27
+1980,war literature,16
+1985,war literature,24
+1990,war literature,16
+1995,war literature,18
+2000,war literature,6
+2005,war literature,10
+1945,western,133
+1950,western,127
+1955,western,332
+1960,western,542
+1965,western,352
+1970,western,230
+1975,western,163
+1980,western,119
+1985,western,129
+1990,western,88
+1995,western,43
+2000,western,18
+2005,western,3
+1945,young adult,7
+1950,young adult,15
+1955,young adult,17
+1960,young adult,11
+1965,young adult,21
+1970,young adult,24
+1975,young adult,44
+1980,young adult,45
+1985,young adult,160
+1990,young adult,357
+1995,young adult,355
+2000,young adult,386
+2005,young adult,340

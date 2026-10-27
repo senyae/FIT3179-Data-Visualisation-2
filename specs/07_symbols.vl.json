@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Number of book publishers, June 2025",
+    "subtitle": "Circle area shows the number of businesses in each state, placed at the capital city"
+  },
+  "width": "container",
+  "height": 380,
+  "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132, 0]},
+  "layer": [
+    {
+      "data": {"url": "data/aus_states.json",
+               "format": {"type": "topojson", "feature": "states"}},
+      "mark": {"type": "geoshape", "fill": "#e7e5e4", "stroke": "white", "strokeWidth": 1}
+    },
+    {
+      "data": {"url": "data/biz_latest.csv"},
+      "transform": [
+        {"lookup": "state_abbr",
+         "from": {"data": {"values": [
+            {"state_abbr": "NSW", "city": "Sydney", "lat": -33.87, "lon": 151.21},
+            {"state_abbr": "VIC", "city": "Melbourne", "lat": -37.81, "lon": 144.96},
+            {"state_abbr": "QLD", "city": "Brisbane", "lat": -27.47, "lon": 153.03},
+            {"state_abbr": "WA", "city": "Perth", "lat": -31.95, "lon": 115.86},
+            {"state_abbr": "SA", "city": "Adelaide", "lat": -34.93, "lon": 138.60},
+            {"state_abbr": "TAS", "city": "Hobart", "lat": -42.88, "lon": 147.33},
+            {"state_abbr": "NT", "city": "Darwin", "lat": -12.46, "lon": 130.84},
+            {"state_abbr": "ACT", "city": "Canberra", "lat": -35.28, "lon": 149.13}
+          ]},
+          "key": "state_abbr",
+          "fields": ["city", "lat", "lon"]}}
+      ],
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"}
+      },
+      "layer": [
+        {
+          "mark": {"type": "circle", "color": "#b45309", "opacity": 0.75, "stroke": "white", "strokeWidth": 1},
+          "encoding": {
+            "size": {"field": "businesses", "type": "quantitative", "title": "Publishers",
+                     "scale": {"type": "sqrt", "range": [0, 2500]},
+                     "legend": {"values": [10, 100, 300]}},
+            "tooltip": [
+              {"field": "state", "title": "State"},
+              {"field": "city", "title": "Capital"},
+              {"field": "businesses", "type": "quantitative", "title": "Publishers"}
+            ]
+          }
+        },
+        {
+          "transform": [{"filter": "datum.businesses >= 40"}],
+          "mark": {"type": "text", "dy": -2, "fontSize": 11, "fontWeight": "bold", "color": "white"},
+          "encoding": {"text": {"field": "businesses", "type": "quantitative"}}
+        }
+      ]
+    }
+  ]
+}

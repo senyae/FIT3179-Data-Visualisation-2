@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Turning the Page: Australian Publishing</title>
+    <link href="https://fonts.goggleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+<main>
+    <header>
+        <h1>Turning the Page</h1>
+        <p class="subtitle">How Australian publishing has changed, 1945 to today</p>
+        <p class="byline">Senya, 33899150</p>
+        <p>Australia has been publishing novels for well over a century, but the kinds of books and the companies behind them have changed a lot since World War II. This page first looks at more than 17000 Australian novels pubilshed between 1945 and 2009, then at the book publishing businesses operating across the country today.</p>
+    </header>
+
+    <section>
+        <h2>1. How many novels, and what kinds?</h2>
+        <p>In the late 1940s around 100 Australian novels were published each year. Output jumped in the late 1950s, peaking in 1960, then settled at around 200 a year through the 1970s and 80s. From the late 1980s it climbed steadily again, reaching about 450 a year by 2000.</p>
+        <p class="hint">Drag across the bottom timeline to zoom in. Click a genre in the legend to highlight it.</p>
+        <div id="ch1" class="chart"></div>
+
+        <p>Because total output changed so much, the heatmap below shows each genre as a share of that decade's novels. Westerns and crime made up a large part of the 1950s and 60s, whilst young adult fiction and fantasy grew in the 1990s and 2000s.</p>
+        <div id="ch2" class="chart"></div>
+
+        <p>By the 2000s, young adult was the single biggest genre, followed by romance. Genre fiction such as romance, crime and fantasy still made up a large part of what was published.</p>
+        <div id="ch3" class="chart"></div>
+    </section>
+
+    <section>
+        <h2>2. Who published them?</h2>
+        <p>In the 1950s and 60s, Sydney pulp publishers Horwitz and Cleveland released far more novels than anyone else, mostly cheap westerns, crime and romance. From the 1980s, Torstar, the owner of Harlequin and Mills &amp; Boon, took the top spot, and by the 2000s large international companies such as News Corporation, Pearson and Bertelsmann were among the main publishers.</p>
+        <p class="hint">Hover over a publisher to follow its rank across the decades.</p>
+        <div id="ch4" class="chart"></div>
+    </section>
+
+    <section>
+        <h2>3. The industry today</h2>
+        <p>In June 2025 there were 884 book publishing businesses in Australia, down from 921 in 2023. Most are very small: around 7 in 10 have no employees at all.</p>
+        <div id="ch5" class="chart"></div>
+
+        <p>New South Wales and Victoria have the most publishers, both in total and relative to their population, with close to 4 publishers for every 100 000 people. Smaller states and territories have far fewer.</p>
+        <p class="hint">Drag the slider to change the year. Hover over a state for details.</p>
+        <div class="pair">
+            <div id="ch8" class="chart"></div>
+            <div id="ch9" class="chart"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. What Australians buy now</h2>
+        <p>Sales data shows a shift in what Australians are buying. Adult fiction went from 27% of the book market in 2022 to about 34% in 2024, while adult nonfiction's share fell.</p>
+        <div id="ch10" class="chart"></div>
+    </section>
+
+    <footer>
+        <h3>About</h3>
+        <p>Senya, FIT3179 Data Visualisation 2, Monash University. Topic: Australian Publishing Industry.</p>
+
+        <h3>Data</h3>
+        <ul>
+            <li>Bode, K. (2019). <i>Australian Novels, 1945 to 2009</i> (derived from AustLit). ANU Data Commons. CC BY-NC. Novels with no recorded genre (about 30%) are left out of the genre charts.</li>
+            <li>Australian Bureau of Statistics (2025). <i>Counts of Australian Businesses, including Entries and Exits, June 2021 to June 2025</i>, ANZSIC class 5413 Book Publishing. ABS adjusts small counts for privacy, so figures for small territories are approximate.</li>
+            <li>Australian Bureau of Statistics. <i>National, state and territory population</i>, June 2023 and June 2025.</li>
+            <li>NielsenIQ BookScan figures reported by Books+Publishing (2023, 2025). The 2024 children's figure includes YA and educational titles.</li>
+            <li>State boundaries derived from ABS boundaries via github.com/rowanhogan/australian-states.</li>
+        </ul>
+
+        <h3>AI use</h3>
+        <p>I used Claude (Anthropic) to help clean and aggregate the datasets</p>
+    </footer>
+
+</main> 
+<script src="js/main.js"></script>   
+</body>    
+</html>

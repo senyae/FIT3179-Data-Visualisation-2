@@ -1,0 +1,14 @@
+id,parent,count
+root,,
+Genre fiction,root,
+General & other,root,
+crime/detective,Genre fiction,325
+fantasy,Genre fiction,256
+historical fiction,General & other,358
+humour/satire,General & other,148
+other,General & other,312
+romance,Genre fiction,509
+science fiction,Genre fiction,137
+war literature,General & other,16
+western,Genre fiction,21
+young adult,General & other,726

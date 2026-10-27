@@ -1,0 +1,218 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "vconcat": [
+    {
+      "width": "container",
+      "height": 300,
+      "title": {
+        "text": "What genres were Australian novels written in?",
+        "subtitle": "Novels with a recorded genre, grouped into 5-year periods, 1945–2009. Click a genre in the legend to highlight it."
+      },
+      "data": {
+        "url": "data/genre_by_period.csv",
+        "format": {
+          "parse": {
+            "year": "number",
+            "count": "number"
+          }
+        }
+      },
+      "params": [
+        {
+          "name": "genre_pick",
+          "select": {
+            "type": "point",
+            "fields": [
+              "genre"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": {
+              "param": "brush"
+            }
+          },
+          "axis": {
+            "format": "d",
+            "title": null
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "count",
+          "type": "quantitative",
+          "stack": "center",
+          "axis": null
+        },
+        "color": {
+          "field": "genre",
+          "type": "nominal",
+          "title": "Genre",
+          "scale": {
+            "domain": [
+              "western",
+              "romance",
+              "crime/detective",
+              "young adult",
+              "historical fiction",
+              "war literature",
+              "humour/satire",
+              "science fiction",
+              "fantasy",
+              "other"
+            ],
+            "range": [
+              "#b45309",
+              "#db2777",
+              "#1d4ed8",
+              "#16a34a",
+              "#7c3aed",
+              "#57534e",
+              "#ca8a04",
+              "#0891b2",
+              "#9333ea",
+              "#d6d3d1"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "genre_pick",
+            "value": 1
+          },
+          "value": 0.15
+        },
+        "tooltip": [
+          {
+            "field": "genre",
+            "title": "Genre"
+          },
+          {
+            "field": "year",
+            "title": "Period starting"
+          },
+          {
+            "aggregate": "sum",
+            "field": "count",
+            "title": "Novels"
+          }
+        ]
+      }
+    },
+    {
+      "width": "container",
+      "height": 90,
+      "title": {
+        "text": "Drag across this timeline to zoom the chart above",
+        "fontSize": 11,
+        "fontWeight": "normal"
+      },
+      "data": {
+        "url": "data/novels_by_year.csv",
+        "format": {
+          "parse": {
+            "year": "number",
+            "count": "number"
+          }
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "area",
+            "color": "#d6d3d1",
+            "line": {
+              "color": "#57534e"
+            }
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "axis": {
+                "format": "d",
+                "title": null
+              }
+            },
+            "y": {
+              "field": "count",
+              "type": "quantitative",
+              "title": "All novels",
+              "axis": {
+                "tickCount": 3,
+                "grid": false
+              }
+            }
+          },
+          "params": [
+            {
+              "name": "brush",
+              "select": {
+                "type": "interval",
+                "encodings": [
+                  "x"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "transform": [
+            {
+              "window": [
+                {
+                  "op": "rank",
+                  "as": "ranking"
+                }
+              ],
+              "sort": [
+                {
+                  "field": "count",
+                  "order": "descending"
+                }
+              ]
+            },
+            {
+              "filter": "datum.ranking == 1"
+            },
+            {
+              "calculate": "'Peak: ' + datum.year + ', ' + datum.count + ' novels'",
+              "as": "label"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 6,
+            "dy": 2,
+            "fontSize": 11,
+            "color": "#b45309"
+          },
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "count",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

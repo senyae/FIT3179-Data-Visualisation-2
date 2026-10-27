@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Book publishers per 100 000 people",
+        "subtitle": "By state and territory. Drag the slider to change year."
+    },
+    "width": "container",
+    "height": 380,
+    "params": [
+        {"name": "Year_selection", "value":2025,
+         "bind": {"input": "range", "min": 2023, "max":2025, "step":1, "name": "Year: "}}    
+    ],
+    "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132,0]},
+    "data": {"url": "data/biz_by_state_year.csv"},
+    "transform": [
+        {"lookup": "state",
+         "from": {"data": {"url": "data/aus_states.json",
+                            "format": {"type": "topojson", "feature": "states"}},
+                  "key": "properties.STATE_NAME"},
+                "as":"geo"},
+                {"filter": "datum.year == Year_selection"}          
+    ],
+    "mark": {"type": "geoshape", "stroke": "white", "strokeWidth":1},
+    "encoding": {
+        "shape": {"field": "geo", "type": "geojson"},
+        "color": {"field": "per_100k", "type": "quantitative", "title": "Per 100k",
+                   "scale": {"domain": [0,4.5], "scheme": "oranges"}},
+        "tooltip": [
+            {"field": "state", "title": "State"},
+            {"field": "businesses", "type": "quantitative", "title": "Publishers"},
+            {"field": "per_100k", "type": "quantitative", "title": "Per 100,000 people", "format": ".1f"}
+        ]
+    }
+}
