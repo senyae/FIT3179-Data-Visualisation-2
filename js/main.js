@@ -9,7 +9,7 @@ const cfg = {
 const charts = [
   ["#ch1", "specs/01_genres_overview.vl.json"],
   ["#ch2", "specs/02_heatmap.vl.json"]
-  // ["#ch3", "specs/03_treemap.vg.json"],
+  ["#ch3", "specs/03_publisher_type.vg.json"],
   ["#ch4", "specs/04_bump.vl.json"],
   ["#ch5", "specs/05_waffle.vl.json"],
   ["#ch6", "specs/06_chloropleth.vl.json"],
