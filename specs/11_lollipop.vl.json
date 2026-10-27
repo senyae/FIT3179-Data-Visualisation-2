@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Young adult was the biggest genre of the 2000s",
+    "subtitle": "Australian novels published 2000–2009, by genre (novels with a recorded genre)"
+  },
+  "width": "container",
+  "height": 280,
+  "data": {"url": "data/treemap_2000s.csv",
+           "format": {"parse": {"count": "number"}}},
+  "transform": [{"filter": "datum.count > 0"}],
+  "encoding": {
+    "y": {"field": "id", "type": "nominal", "title": null, "sort": "-x"},
+    "x": {"field": "count", "type": "quantitative", "title": "Novels"}
+  },
+  "layer": [
+    {"mark": {"type": "rule", "color": "#d6d3d1", "strokeWidth": 2},
+     "encoding": {"x2": {"datum": 0}}},
+    {"mark": {"type": "circle", "size": 140, "opacity": 1},
+     "encoding": {
+       "color": {"field": "parent", "type": "nominal", "title": "Type",
+                 "scale": {"domain": ["Genre fiction", "General & other"],
+                           "range": ["#b45309", "#a8a29e"]}},
+       "tooltip": [
+         {"field": "id", "title": "Genre"},
+         {"field": "parent", "title": "Type"},
+         {"field": "count", "type": "quantitative", "title": "Novels"}
+       ]}},
+    {"mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 11},
+     "encoding": {"text": {"field": "count", "type": "quantitative"}}}
+  ]
+}
