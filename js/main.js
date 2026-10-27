@@ -16,7 +16,8 @@ const charts = [
   ["#ch7", "specs/07_symbols.vl.json"],
   ["#ch8", "specs/08_tilegrid.vl.json"],
   ["#ch9", "specs/09_dumbbell.vl.json"],
-  ["#ch10", "specs/10_slope.vl.json"]
+  ["#ch10", "specs/10_slope.vl.json"],
+  ["#ch11", "specs/11_lollipop.vl.json"]
 ];
 
 charts.forEach(([el, url]) => {
