@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Adult fiction's share of book sales is growing",
+    "subtitle": "Share of the Australian book market by value. 2024 children's figure includes YA and educational."
+  },
+  "width": 360,
+  "height": 300,
+  "data": {"url": "data/market_share.csv"},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": null,
+          "axis": {"labelAngle": 0, "orient": "top", "domain": false, "ticks": false}},
+    "y": {"field": "share", "type": "quantitative", "axis": null,
+          "scale": {"domain": [24, 46]}},
+    "color": {"field": "sector", "type": "nominal", "legend": null,
+              "scale": {"domain": ["Adult fiction", "Adult nonfiction", "Children's"],
+                        "range": ["#b45309", "#a8a29e", "#a8a29e"]}}
+  },
+  "layer": [
+    {"mark": {"type": "line", "strokeWidth": 3}, "encoding": {"detail": {"field": "sector"}}},
+    {"mark": {"type": "circle", "size": 90, "opacity": 1},
+     "encoding": {"tooltip": [
+        {"field": "sector", "title": "Sector"},
+        {"field": "year", "title": "Year"},
+        {"field": "share", "type": "quantitative", "title": "Share (%)"}]}},
+    {"transform": [{"filter": "datum.year == 2022"}],
+     "mark": {"type": "text", "align": "right", "dx": -10, "fontSize": 12},
+     "encoding": {"text": {"field": "share", "type": "quantitative", "format": ".0f"}}},
+    {"transform": [{"filter": "datum.year == 2024"},
+                   {"calculate": "format(datum.share, '.0f') + '%  ' + datum.sector", "as": "label"}],
+     "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 12},
+     "encoding": {"text": {"field": "label"}}}
+  ]
+}

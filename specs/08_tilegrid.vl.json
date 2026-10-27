@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Size of publishers in each state, June 2025",
+    "subtitle": "Tiles are arranged roughly by geography. Bars show the share of businesses by number of employees."
+  },
+  "data": {"url":"data/biz_size_by_state.csv"},
+  "facet": {
+    "row": {"field": "tile_row", "type": "ordinal", "header":null},
+    "column": {"field": "tile_col", "type":"ordinal", "header":null}    
+  },
+  "spec": {
+    "width": 110,
+    "height": 26,
+    "mark": "bar",
+    "encoding": {
+        "y": {"field": "state_abbr", "type": "nominal", "title": null,
+             "axis": {"ticks": false, "domain": false, "labelFontSize": 12, "labelFontWeight": "bold"}},
+        "x": {"field": "businesses", "type": "quantitative", "stack": "normalize", "axis": null},
+        "color": {"field": "size_band", "type": "nominal", "title": "Employees",
+                  "scale": {"domain": ["Non-employing", "1–19 staff", "20+ staff"],
+                          "range": ["#b45309", "#fdba74", "#57534e"]}},
+        "tooltip": [
+            {"field":"state", "title": "State"},
+            {"field":"size_band", "title": "Size"},
+            {"field":"businesses", "type": "quantitative", "title": "Businesses"}
+        ]
+    }
+  },
+  "spacing":8,
+  "resolve":{"scale":{"y":"independent"}}
+}

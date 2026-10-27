@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Change in publishers per 100,000 people",
+    "subtitle": "June 2023 compared with June 2025"
+  },
+  "width": "container",
+  "height": 260,
+  "data":{"url":"data/biz_by_state_year.csv",
+          "format": {"parse": {"year": "number", "per_100k": "number", "businesses": "number"}}},
+  "transform": [{"filter": "datum.year == 2023 || datum.year == 2025"}],
+  "encoding": {
+    "y": {"field": "state_abbr", "type": "nominal", "title": null,
+          "sort": {"field": "per_100k", "op": "max", "order": "descending"}},
+    "x": {"field": "per_100k", "type": "quantitative", "title": "Publishers per 100,000 people"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "color": "#a8a29e", "strokeWidth": 2},
+      "encoding": {"detail": {"field": "state_abbr"}}
+    },
+    {
+      "mark": {"type": "circle", "size": 120, "opacity": 1},
+      "encoding": {
+        "color": {"field": "year", "type": "ordinal", "title": "Year",
+                  "scale": {"domain": [2023, 2025], "range": ["#a8a29e", "#b45309"]}},
+        "tooltip": [
+            {"field":"state", "title": "State"},
+            {"field":"year", "title": "Year"},
+            {"field":"businesses", "type": "quantitative", "title": "Publishers"},
+            {"field":"per_100k", "type": "quantitative", "title": "Per 100k", "format": ".2f"}
+        ]
+      }
+    }
+  ]
+}  

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Who published Australian novels?",
+        "subtitle": "Share of novels each decade by type of publisher"
+    },
+    "width": "container",
+    "height": 260,
+    "data": {"url":"data/nation_by_decade.csv"},
+    "mark":"bar",
+    "encoding": {
+        "x":{"field": "decade", "type":"ordinal", "title":null, "axis": {"labelAngle":0}},
+        "y": {"field": "count", "type": "quantitative", "stack": "normalize",
+          "title": "Share of novels", "axis": {"format": "%"}},
+    "color": {"field": "nation", "type": "nominal", "title": "Publisher type",
+              "scale": {"domain": ["Australian publisher", "Multinational", "British publisher", "American publisher", "Self-published", "Other/unknown"],
+                        "range": ["#b45309", "#1d4ed8", "#93c5fd", "#a5b4fc", "#fdba74", "#d6d3d1"]},
+              "legend": {"labelLimit": 0}},
+    "tooltip": [
+      {"field": "decade", "title": "Decade"},
+      {"field": "nation", "title": "Publisher type"},
+      {"field": "count", "type": "quantitative", "title": "Novels"}
+    ]
+   }
+}
